@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mom's Jakarta & Bandung Trip 🌺</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: system-ui, -apple-system, sans-serif; }
+    .fade-in { animation: fadeIn 0.4s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+    .tab-active   { color: #c2410c; border-bottom: 3px solid #c2410c; font-weight: 700; background: #fff7ed; }
+    .tab-inactive { color: #6b7280; border-bottom: 3px solid transparent; font-weight: 500; }
+    .tab-inactive:hover { color: #c2410c; background: #fff7ed; }
+    .meal-pill { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; }
+    .hotel-recommended { outline: 3px solid #0d9488; }
+  </style>
+</head>
+<body class="bg-amber-50">
+
+<!-- ═══════════════════════════════════════════════
+     STICKY NAVIGATION + TAB BAR
+═══════════════════════════════════════════════ -->
+<nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-orange-100">
+  <div class="max-w-6xl mx-auto px-3 py-3 flex items-center justify-between gap-2">
+    <div class="flex items-center gap-2 flex-shrink-0">
+      <span class="text-xl">🌺</span>
+      <span class="font-bold text-orange-700 text-sm md:text-base leading-tight">Mom's Adventure</span>
+    </div>
+    <div class="flex overflow-x-auto gap-1">
+      <button id="tab-trip"    onclick="switchTab('trip')"    class="tab-btn tab-active    px-3 md:px-5 py-2 rounded-t-lg text-xs md:text-sm whitespace-nowrap transition-colors">🗺️ The Trip</button>
+      <button id="tab-package" onclick="switchTab('package')" class="tab-btn tab-inactive  px-3 md:px-5 py-2 rounded-t-lg text-xs md:text-sm whitespace-nowrap transition-colors">📋 Package</button>
+      <button id="tab-hotels"  onclick="switchTab('hotels')"  class="tab-btn tab-inactive  px-3 md:px-5 py-2 rounded-t-lg text-xs md:text-sm whitespace-nowrap transition-colors">🏨 Hotels</button>
+      <button id="tab-papa"    onclick="switchTab('papa')"    class="tab-btn tab-inactive  px-3 md:px-5 py-2 rounded-t-lg text-xs md:text-sm whitespace-nowrap transition-colors">❤️ Papa's Verdict</button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════
+     TAB 1 — THE TRIP
+═══════════════════════════════════════════════ -->
+<div id="content-trip" class="fade-in">
+
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <img src="https://images.pexels.com/photos/6340908/pexels-photo-6340908.jpeg?auto=compress&cs=tinysrgb&w=1800&fit=crop"
+         alt="Jakarta skyline"
+         class="absolute inset-0 w-full h-full object-cover"
+         onerror="this.style.display='none'">
+    <div class="absolute inset-0 bg-gradient-to-br from-orange-900/75 via-orange-700/55 to-teal-900/70"></div>
+    <div class="relative z-10 text-center text-white px-4">
+      <p class="text-orange-300 text-sm md:text-base mb-3 font-medium tracking-widest uppercase">A Special Trip for Mom</p>
+      <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-xl leading-tight" style="font-family:Georgia,serif">Jakarta &amp; Bandung</h1>
+      <p class="text-xl md:text-2xl text-orange-200 mb-8 font-light">5 Days · 3 Ladies · Endless Memories</p>
+      <div class="flex flex-wrap gap-3 justify-center mb-10">
+        <span class="bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full text-sm font-medium">📅 Late June 2026</span>
+        <span class="bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full text-sm font-medium">✈️ Singapore → Jakarta</span>
+        <span class="bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full text-sm font-medium">👩‍👩‍👧 3 Travellers</span>
+        <span class="bg-white/20 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-full text-sm font-medium">🏙️ 2 Cities</span>
+        <span class="bg-green-500/80 border border-green-300/50 px-4 py-2 rounded-full text-sm font-medium">🍽️ All Halal Meals Included</span>
+      </div>
+      <a href="#itinerary" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-base font-semibold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">See the Full Plan →</a>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- Two Cities -->
+  <section class="py-14 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800" style="font-family:Georgia,serif">Two Beautiful Cities Await</h2>
+        <p class="text-gray-500 mt-2">Highland charm first, then the capital's buzz</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="relative rounded-2xl overflow-hidden h-72 group card-hover shadow-md">
+          <img src="https://images.pexels.com/photos/37958759/pexels-photo-37958759.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop"
+               alt="Bandung cityscape" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,#a7f3d0,#059669)'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute top-4 right-4 bg-teal-500 text-white text-xs px-3 py-1 rounded-full font-semibold">Days 1–3</div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-4xl font-bold mb-1" style="font-family:Georgia,serif">Bandung</h3>
+            <p class="text-teal-300 font-medium">The Paris of Java</p>
+            <p class="text-white/75 text-sm mt-1">Nature · Craters · Hot Springs · Shopping</p>
+          </div>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden h-72 group card-hover shadow-md">
+          <img src="https://images.pexels.com/photos/37168263/pexels-photo-37168263.jpeg?auto=compress&cs=tinysrgb&w=900&fit=crop"
+               alt="Kota Tua Old Batavia Jakarta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,#fed7aa,#f97316)'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+          <div class="absolute top-4 right-4 bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-semibold">Day 4–5</div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <h3 class="text-4xl font-bold mb-1" style="font-family:Georgia,serif">Jakarta</h3>
+            <p class="text-orange-300 font-medium">The Capital City</p>
+            <p class="text-white/75 text-sm mt-1">History · Culture · Monas · Old Batavia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo strip -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-1 h-48 md:h-56">
+    <img src="https://images.pexels.com/photos/6340908/pexels-photo-6340908.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop" alt="Jakarta skyline" class="w-full h-full object-cover" onerror="this.style.background='#fed7aa'">
+    <img src="https://images.pexels.com/photos/15927544/pexels-photo-15927544.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop" alt="Kawah Putih white crater" class="w-full h-full object-cover" onerror="this.style.background='#6ee7b7'">
+    <img src="https://images.pexels.com/photos/35604080/pexels-photo-35604080.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop" alt="Tangkuban Perahu volcano" class="w-full h-full object-cover" onerror="this.style.background='#fbbf24'">
+    <img src="https://images.pexels.com/photos/30171940/pexels-photo-30171940.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop" alt="Monas National Monument Jakarta" class="w-full h-full object-cover" onerror="this.style.background='#fb923c'">
+  </div>
+
+  <!-- Itinerary -->
+  <section id="itinerary" class="py-16 bg-amber-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold uppercase tracking-widest text-xs">Halijah Travel Official Itinerary</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2" style="font-family:Georgia,serif">5-Day Itinerary</h2>
+        <p class="text-gray-500 mt-2">With a Malay-speaking guide &amp; air-conditioned transport throughout</p>
+      </div>
+
+      <!-- Day 1 -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6 card-hover">
+        <div class="bg-gradient-to-r from-teal-600 to-teal-500 text-white px-6 py-5 flex items-center justify-between">
+          <div>
+            <p class="text-teal-200 text-xs font-semibold uppercase tracking-wider mb-1">Day 1 · Singapore → Jakarta → Bandung</p>
+            <h3 class="text-2xl font-bold">Arrival in Bandung</h3>
+            <div class="flex gap-2 mt-2">
+              <span class="meal-pill bg-yellow-400 text-yellow-900">🍽️ Lunch</span>
+              <span class="meal-pill bg-orange-400 text-orange-900">🌙 Dinner</span>
+            </div>
+          </div>
+          <span class="text-5xl opacity-90">✈️</span>
+        </div>
+        <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🌅</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Morning — Fly to Jakarta</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Board flight from Changi Airport to Soekarno-Hatta, Jakarta (~1.5 hrs). Greeted by your Malay-speaking guide on arrival.</p>
+              <span class="inline-block mt-2 bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full">✓ Short direct flight</span>
+            </div>
+          </div>
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🚄</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Mid-Morning — Whoosh to Bandung</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Board the <strong>Whoosh High-Speed Train</strong> — Jakarta to Bandung in just <strong>45 minutes</strong> at 350 km/h. Comfortable, smooth, air-conditioned. Lunch at local restaurant on arrival.</p>
+              <span class="inline-block mt-2 bg-teal-100 text-teal-700 text-xs px-2 py-0.5 rounded-full">⚡ 45 mins only!</span>
+            </div>
+          </div>
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🏛️</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Afternoon — Bandung Landmarks</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Visit <strong>Gedung Sate</strong> (iconic colonial government building) &amp; <strong>Asia Africa Building</strong> (historic 1955 conference site). Shop at <strong>Pasar Baru Trade Centre</strong>. Dinner, then check in to hotel.</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-1 h-40 mx-0">
+          <img src="https://images.pexels.com/photos/37920425/pexels-photo-37920425.jpeg?auto=compress&cs=tinysrgb&w=600&fit=crop"
+               alt="Gedung Sate Bandung colonial building"
+               class="w-full h-full object-cover"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,#99f6e4,#0d9488)'">
+          <img src="https://images.pexels.com/photos/9771342/pexels-photo-9771342.jpeg?auto=compress&cs=tinysrgb&w=600&fit=crop"
+               alt="Bandung tea plantation highlands"
+               class="w-full h-full object-cover"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,#a7f3d0,#059669)'">
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6 card-hover">
+        <div class="bg-gradient-to-r from-emerald-600 to-green-500 text-white px-6 py-5 flex items-center justify-between">
+          <div>
+            <p class="text-emerald-200 text-xs font-semibold uppercase tracking-wider mb-1">Day 2 · Bandung</p>
+            <h3 class="text-2xl font-bold">Volcano, Hot Springs &amp; Farmhouse</h3>
+            <div class="flex gap-2 mt-2">
+              <span class="meal-pill bg-blue-300 text-blue-900">🌄 Breakfast</span>
+              <span class="meal-pill bg-yellow-400 text-yellow-900">🍽️ Lunch</span>
+              <span class="meal-pill bg-orange-400 text-orange-900">🌙 Dinner</span>
+            </div>
+          </div>
+          <span class="text-5xl opacity-90">🌋</span>
+        </div>
+        <div class="p-6">
+          <div class="grid md:grid-cols-2 gap-6 mb-5">
+            <div class="space-y-4">
+              <div class="flex gap-3">
+                <div class="w-9 h-9 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🌋</div>
+                <div>
+                  <p class="font-semibold text-gray-700 text-sm mb-1">Tangkuban Perahu</p>
+                  <p class="text-gray-500 text-sm leading-relaxed">An active volcano with a wide, accessible crater rim. Breathtaking views into the steaming caldera. Paved paths, cool mountain air (~18°C). One of Java's most iconic sights.</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-9 h-9 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">♨️</div>
+                <div>
+                  <p class="font-semibold text-gray-700 text-sm mb-1">Sari Ater Hot Spring</p>
+                  <p class="text-gray-500 text-sm leading-relaxed">Natural sulphur hot spring pools in a lush jungle setting. Perfect for a relaxing soak after the volcano visit. Great for tired feet and joints — your body will thank you!</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-9 h-9 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🏡</div>
+                <div>
+                  <p class="font-semibold text-gray-700 text-sm mb-1">Farmhouse &amp; Cihampelas</p>
+                  <p class="text-gray-500 text-sm leading-relaxed">Visit the charming <strong>Farmhouse Lembang</strong> — a European-themed garden with animals. Then shop at <strong>Cihampelas Jeans Centre</strong> for Bandung's famous denim at great prices.</p>
+                </div>
+              </div>
+            </div>
+            <div class="rounded-xl overflow-hidden h-64">
+              <img src="https://images.pexels.com/photos/35604080/pexels-photo-35604080.jpeg?auto=compress&cs=tinysrgb&w=700&fit=crop"
+                   alt="Tangkuban Perahu volcano crater Bandung"
+                   class="w-full h-full object-cover"
+                   onerror="this.parentElement.style.background='linear-gradient(135deg,#6ee7b7,#059669)'">
+            </div>
+          </div>
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-sm text-emerald-800">
+            <strong>Senior-friendly:</strong> All sites have accessible pathways. Bring a light jacket for the volcano and hot spring area. AC transport takes you door-to-door.
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6 card-hover">
+        <div class="bg-gradient-to-r from-cyan-600 to-teal-500 text-white px-6 py-5 flex items-center justify-between">
+          <div>
+            <p class="text-cyan-200 text-xs font-semibold uppercase tracking-wider mb-1">Day 3 · Bandung</p>
+            <h3 class="text-2xl font-bold">White Crater, Lakeside &amp; Strawberries</h3>
+            <div class="flex gap-2 mt-2">
+              <span class="meal-pill bg-blue-300 text-blue-900">🌄 Breakfast</span>
+              <span class="meal-pill bg-yellow-400 text-yellow-900">🍽️ Lunch</span>
+              <span class="meal-pill bg-orange-400 text-orange-900">🌙 Dinner</span>
+            </div>
+          </div>
+          <span class="text-5xl opacity-90">🌿</span>
+        </div>
+        <div class="p-6">
+          <div class="grid md:grid-cols-2 gap-6 mb-5">
+            <div class="rounded-xl overflow-hidden h-64">
+              <img src="https://images.pexels.com/photos/15927544/pexels-photo-15927544.jpeg?auto=compress&cs=tinysrgb&w=700&fit=crop"
+                   alt="Kawah Putih white crater Bandung"
+                   class="w-full h-full object-cover"
+                   onerror="this.parentElement.style.background='linear-gradient(135deg,#a5f3fc,#0891b2)'">
+            </div>
+            <div class="space-y-4">
+              <div class="flex gap-3">
+                <div class="w-9 h-9 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🏞️</div>
+                <div>
+                  <p class="font-semibold text-gray-700 text-sm mb-1">Kawah Putih Ciwidey</p>
+                  <p class="text-gray-500 text-sm leading-relaxed">The <strong>White Crater</strong> — a surreal turquoise volcanic lake surrounded by white mineral rock and wisps of mist. One of Indonesia's most photographed natural wonders. Very cool (~17°C) and magical.</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-9 h-9 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">⛺</div>
+                <div>
+                  <p class="font-semibold text-gray-700 text-sm mb-1">Glamping Lakeside</p>
+                  <p class="text-gray-500 text-sm leading-relaxed">A scenic lakeside glamping resort with stunning mountain views. Perfect for a relaxed lunch or afternoon stroll along the water. Lovely photo spot.</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-9 h-9 bg-cyan-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🍓</div>
+                <div>
+                  <p class="font-semibold text-gray-700 text-sm mb-1">Strawberry Farm</p>
+                  <p class="text-gray-500 text-sm leading-relaxed">Pick fresh strawberries straight from the vine at Ciwidey's famous strawberry farm. Sweet, plump, and delicious — buy fresh or take home as jam souvenirs.</p>
+                  <img src="https://images.pexels.com/photos/7457184/pexels-photo-7457184.jpeg?auto=compress&cs=tinysrgb&w=400&fit=crop"
+                       alt="Strawberry farm Ciwidey Bandung"
+                       class="mt-2 rounded-lg w-full h-24 object-cover"
+                       onerror="this.style.display='none'">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-cyan-50 border border-cyan-200 rounded-xl p-4 text-sm text-cyan-800">
+            <strong>Senior-friendly:</strong> Dress warmly — Ciwidey is the coolest area of the trip (~15–17°C). Short paved walk to crater viewpoint. All spots have seating areas.
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6 card-hover">
+        <div class="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-6 py-5 flex items-center justify-between">
+          <div>
+            <p class="text-orange-200 text-xs font-semibold uppercase tracking-wider mb-1">Day 4 · Bandung → Jakarta</p>
+            <h3 class="text-2xl font-bold">Back to the Capital</h3>
+            <div class="flex gap-2 mt-2">
+              <span class="meal-pill bg-blue-300 text-blue-900">🌄 Breakfast</span>
+              <span class="meal-pill bg-yellow-400 text-yellow-900">🍽️ Lunch</span>
+              <span class="meal-pill bg-orange-400 text-orange-900">🌙 Dinner</span>
+            </div>
+          </div>
+          <span class="text-5xl opacity-90">🏙️</span>
+        </div>
+        <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🚄</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Morning — Whoosh to Jakarta</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Breakfast at hotel, check out. Whoosh train back to Jakarta (45 min). Check in to Jakarta hotel and freshen up.</p>
+            </div>
+          </div>
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🏛️</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Afternoon — Monas &amp; Old Batavia</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Visit <strong>Monas</strong> (National Monument) for panoramic city views. Then explore <strong>Old Batavia (Kota Tua)</strong> — Jakarta's beautifully preserved Dutch colonial quarter. Lunch at local restaurant.</p>
+            </div>
+          </div>
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🎨</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Evening — Art Market &amp; Dinner</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Browse the <strong>Art Market</strong> near Kota Tua for Indonesian handicrafts, batik, and souvenirs. Perfect for last-minute gifts. Dinner, then overnight in Jakarta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 5 -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6 card-hover">
+        <div class="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-6 py-5 flex items-center justify-between">
+          <div>
+            <p class="text-purple-200 text-xs font-semibold uppercase tracking-wider mb-1">Day 5 · Jakarta → Singapore</p>
+            <h3 class="text-2xl font-bold">Homeward Bound</h3>
+            <div class="flex gap-2 mt-2">
+              <span class="meal-pill bg-blue-300 text-blue-900">🌄 Breakfast</span>
+            </div>
+          </div>
+          <span class="text-5xl opacity-90">🏠</span>
+        </div>
+        <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">☕</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Morning — Breakfast &amp; Check Out</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Last hotel breakfast. Check out at leisure and do any final souvenir shopping nearby.</p>
+            </div>
+          </div>
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🕐</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Free at Own Leisure</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Time to relax, do last-minute shopping, or simply sit and soak in the Jakarta atmosphere before heading home.</p>
+            </div>
+          </div>
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">✈️</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Afternoon — Fly Home to Singapore</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Guide transfers group to Soekarno-Hatta Airport. Board flight back to Changi — arriving home well-rested, happy, and full of stories. 🥰</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Food Guide -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold uppercase tracking-widest text-xs">Eat Well</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2" style="font-family:Georgia,serif">Must-Try Food</h2>
+        <p class="text-gray-500 mt-2">All meals on the tour are <strong>halal</strong> — no worries at all</p>
+      </div>
+
+      <!-- Bandung dishes -->
+      <div class="mb-10">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="bg-teal-500 text-white text-sm px-4 py-1.5 rounded-full font-semibold">Bandung</span>
+          <h3 class="font-bold text-gray-700 text-lg">Sundanese Cuisine</h3>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+            <img src="https://images.pexels.com/photos/7234281/pexels-photo-7234281.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop"
+                 alt="Pepes Ikan - fish steamed in banana leaf" class="w-full h-44 object-cover"
+                 onerror="this.style.display='none'">
+            <div class="p-4">
+              <p class="text-xs font-semibold text-teal-600 uppercase tracking-wider mb-1">Bandung</p>
+              <p class="font-bold text-gray-800 text-base">Pepes Ikan</p>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">Fish steamed in banana leaf with aromatic herbs. Light, fragrant, and healthy — a West Javanese signature.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+            <img src="https://images.pexels.com/photos/36075894/pexels-photo-36075894.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop"
+                 alt="Karedok - Indonesian peanut salad" class="w-full h-44 object-cover"
+                 onerror="this.style.display='none'">
+            <div class="p-4">
+              <p class="text-xs font-semibold text-teal-600 uppercase tracking-wider mb-1">Bandung</p>
+              <p class="font-bold text-gray-800 text-base">Karedok</p>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">Raw vegetable salad tossed in a rich peanut sauce. Refreshing, crunchy, and full of flavour.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+            <img src="https://images.pexels.com/photos/35042573/pexels-photo-35042573.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop"
+                 alt="Fresh Bandung highland tea" class="w-full h-44 object-cover"
+                 onerror="this.style.display='none'">
+            <div class="p-4">
+              <p class="text-xs font-semibold text-teal-600 uppercase tracking-wider mb-1">Bandung</p>
+              <p class="font-bold text-gray-800 text-base">Fresh Bandung Tea</p>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">Brewed from freshly harvested highland leaves at Ciwidey. A warm cup here is pure magic.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jakarta dishes -->
+      <div>
+        <div class="flex items-center gap-3 mb-5">
+          <span class="bg-orange-500 text-white text-sm px-4 py-1.5 rounded-full font-semibold">Jakarta</span>
+          <h3 class="font-bold text-gray-700 text-lg">Betawi Cuisine</h3>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+            <img src="https://images.pexels.com/photos/37338385/pexels-photo-37338385.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop"
+                 alt="Sate Ayam - Indonesian chicken satay" class="w-full h-44 object-cover"
+                 onerror="this.style.display='none'">
+            <div class="p-4">
+              <p class="text-xs font-semibold text-orange-600 uppercase tracking-wider mb-1">Jakarta</p>
+              <p class="font-bold text-gray-800 text-base">Sate Ayam</p>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">Grilled chicken satay with creamy peanut sauce. Fragrant, soft, and utterly satisfying.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+            <img src="https://images.pexels.com/photos/37193502/pexels-photo-37193502.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop"
+                 alt="Soto Betawi - Jakarta coconut beef soup" class="w-full h-44 object-cover"
+                 onerror="this.style.display='none'">
+            <div class="p-4">
+              <p class="text-xs font-semibold text-orange-600 uppercase tracking-wider mb-1">Jakarta</p>
+              <p class="font-bold text-gray-800 text-base">Soto Betawi</p>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">Jakarta's rich coconut-milk beef soup. Warming, fragrant, and deeply comforting.</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 card-hover">
+            <img src="https://images.pexels.com/photos/37171028/pexels-photo-37171028.jpeg?auto=compress&cs=tinysrgb&w=500&fit=crop"
+                 alt="Nasi Goreng - Indonesian fried rice" class="w-full h-44 object-cover"
+                 onerror="this.style.display='none'">
+            <div class="p-4">
+              <p class="text-xs font-semibold text-orange-600 uppercase tracking-wider mb-1">Jakarta</p>
+              <p class="font-bold text-gray-800 text-base">Nasi Goreng</p>
+              <p class="text-gray-500 text-sm mt-1 leading-relaxed">Indonesia's beloved fried rice — smoky, sweet, topped with a fried egg. An absolute classic.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Practical Tips -->
+  <section class="py-16 bg-amber-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold uppercase tracking-widest text-xs">Be Prepared</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2" style="font-family:Georgia,serif">Practical Tips</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-white rounded-2xl p-6 card-hover shadow-sm"><div class="text-3xl mb-3">💱</div><h3 class="font-bold text-gray-800 mb-2">Currency</h3><p class="text-gray-500 text-sm leading-relaxed">Indonesian Rupiah (IDR). 1 SGD ≈ 11,000 IDR. Bring some cash — most local restaurants and markets prefer it.</p></div>
+        <div class="bg-white rounded-2xl p-6 card-hover shadow-sm"><div class="text-3xl mb-3">📱</div><h3 class="font-bold text-gray-800 mb-2">SIM / eSIM</h3><p class="text-gray-500 text-sm leading-relaxed">Get an Indonesian eSIM on the <strong>Airalo</strong> app before departure. 10GB for ~SGD 6. Stay connected to WhatsApp call home anytime.</p></div>
+        <div class="bg-white rounded-2xl p-6 card-hover shadow-sm"><div class="text-3xl mb-3">👗</div><h3 class="font-bold text-gray-800 mb-2">What to Wear</h3><p class="text-gray-500 text-sm leading-relaxed">Light clothes for Jakarta. Pack a warm layer for Bandung highlands (17–22°C). Comfortable walking shoes essential.</p></div>
+        <div class="bg-white rounded-2xl p-6 card-hover shadow-sm"><div class="text-3xl mb-3">💊</div><h3 class="font-bold text-gray-800 mb-2">Health</h3><p class="text-gray-500 text-sm leading-relaxed">Pack all prescriptions plus extra. Paracetamol, antidiarrheal, rehydration sachets. Drink bottled water only. Sunscreen SPF50+ for Jakarta.</p></div>
+        <div class="bg-white rounded-2xl p-6 card-hover shadow-sm"><div class="text-3xl mb-3">🛡️</div><h3 class="font-bold text-gray-800 mb-2">Travel Insurance</h3><p class="text-gray-500 text-sm leading-relaxed">Get coverage with full medical and emergency evacuation. NTUC Income or AXA both cover Indonesia trips well. Don't skip this!</p></div>
+        <div class="bg-white rounded-2xl p-6 card-hover shadow-sm"><div class="text-3xl mb-3">🆘</div><h3 class="font-bold text-gray-800 mb-2">Emergency</h3><p class="text-gray-500 text-sm leading-relaxed">Indonesia emergency: <strong>112</strong>. Ambulance: <strong>118</strong>. SG Embassy Jakarta: <strong>+62 21 2995 0400</strong>. Your guide's number saved in your phone.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer of tab 1 -->
+  <div class="bg-teal-700 text-white py-10 text-center">
+    <p class="text-teal-200 text-sm mb-3">Convinced? Show Papa the details →</p>
+    <button onclick="switchTab('papa')" class="bg-white text-teal-700 font-bold px-8 py-3 rounded-full hover:bg-teal-50 transition-colors shadow-lg">
+      ❤️ Go to Papa's Verdict
+    </button>
+  </div>
+</div><!-- end content-trip -->
+
+
+<!-- ═══════════════════════════════════════════════
+     TAB 2 — PACKAGE DETAILS
+═══════════════════════════════════════════════ -->
+<div id="content-package" class="hidden fade-in">
+
+  <!-- Header -->
+  <div class="bg-gradient-to-br from-gray-900 to-gray-700 text-white py-14 px-4 text-center">
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-3">Organised by</p>
+    <h2 class="text-3xl md:text-4xl font-bold mb-2" style="font-family:Georgia,serif">Halijah Travel Pte Ltd</h2>
+    <p class="text-gray-300 text-sm mb-5">22 Kandahar Street, Singapore 198886</p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      <span class="bg-white/10 border border-white/20 text-xs px-3 py-1 rounded-full">✅ IATA Accredited</span>
+      <span class="bg-white/10 border border-white/20 text-xs px-3 py-1 rounded-full">✅ STB TA 740</span>
+      <span class="bg-white/10 border border-white/20 text-xs px-3 py-1 rounded-full">✅ Singapore Business Federation</span>
+      <span class="bg-white/10 border border-white/20 text-xs px-3 py-1 rounded-full">✅ SME 500 Listed</span>
+      <span class="bg-white/10 border border-white/20 text-xs px-3 py-1 rounded-full">✅ Malay Chamber of Commerce</span>
+      <span class="bg-white/10 border border-white/20 text-xs px-3 py-1 rounded-full">✅ Kg Gelam Business Assoc. (Founding Member)</span>
+      <span class="bg-white/10 border border-white/20 text-xs px-3 py-1 rounded-full">✅ AMTAS</span>
+    </div>
+    <div class="mt-6 flex flex-wrap gap-4 justify-center text-sm text-gray-400">
+      <span>📞 (65) 6294 9676</span>
+      <span>🌐 www.halijah.com.sg</span>
+      <span>📧 corporate@halijah.com.sg</span>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 py-12">
+
+    <!-- Package name -->
+    <div class="text-center mb-10">
+      <span class="text-orange-500 font-semibold uppercase tracking-widest text-xs">Official Tour Package</span>
+      <h2 class="text-3xl font-bold text-gray-800 mt-2" style="font-family:Georgia,serif">Jakarta–Bandung 2-to-Go</h2>
+      <p class="text-gray-500 mt-1">5 Days 4 Nights · Confirmed Booking</p>
+    </div>
+
+    <!-- Pricing table -->
+    <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-8">
+      <div class="bg-orange-500 text-white px-6 py-4">
+        <h3 class="font-bold text-lg">Package Price (SGD per person)</h3>
+        <p class="text-orange-200 text-sm mt-1">Prices vary by hotel tier and group size. Excludes flights.</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-50 border-b border-gray-200">
+            <tr>
+              <th class="text-left px-4 py-3 font-semibold text-gray-700">Jakarta Hotel</th>
+              <th class="text-left px-4 py-3 font-semibold text-gray-700">Bandung Hotel</th>
+              <th class="text-center px-3 py-3 font-semibold text-gray-700">2–3 pax</th>
+              <th class="text-center px-3 py-3 font-semibold text-gray-700">4–5 pax</th>
+              <th class="text-center px-3 py-3 font-semibold text-gray-700">6–10 pax</th>
+              <th class="text-center px-3 py-3 font-semibold text-gray-700">11–15 pax</th>
+              <th class="text-center px-3 py-3 font-semibold text-gray-700">Single Supp.</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-4">
+                <p class="font-medium text-gray-800">Grand G7 Jakarta / Ibis Mangga Dua</p>
+                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full mt-1">3★ Standard</span>
+              </td>
+              <td class="px-4 py-4">
+                <p class="font-medium text-gray-800">Pasar Baru Square / Panen Hotel</p>
+                <span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full mt-1">3★ Standard</span>
+              </td>
+              <td class="px-3 py-4 text-center"><span class="font-bold text-orange-600 text-base">$690</span></td>
+              <td class="px-3 py-4 text-center font-medium text-gray-700">$590</td>
+              <td class="px-3 py-4 text-center font-medium text-gray-700">$550</td>
+              <td class="px-3 py-4 text-center font-medium text-gray-700">$510</td>
+              <td class="px-3 py-4 text-center font-medium text-gray-500">+$100</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-4">
+                <p class="font-medium text-gray-800">Novotel Gaja Mada / El Royale</p>
+                <span class="inline-block bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full mt-1">4★ Superior</span>
+              </td>
+              <td class="px-4 py-4">
+                <p class="font-medium text-gray-800">Grand Tebu / De Braga Hotel</p>
+                <span class="inline-block bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full mt-1">4★ Superior</span>
+              </td>
+              <td class="px-3 py-4 text-center"><span class="font-bold text-orange-600 text-base">$730</span></td>
+              <td class="px-3 py-4 text-center font-medium text-gray-700">$640</td>
+              <td class="px-3 py-4 text-center font-medium text-gray-700">$600</td>
+              <td class="px-3 py-4 text-center font-medium text-gray-700">$570</td>
+              <td class="px-3 py-4 text-center font-medium text-gray-500">+$150</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-4">
+                <p class="font-medium text-gray-800">Mercure Batavia / Novotel Mangga Dua</p>
+                <span class="inline-block bg-purple-100 text-purple-700 text-xs px-2 py-0.5 rounded-full mt-1">4★ Deluxe</span>
+              </td>
+              <td class="px-4 py-4">
+                <p class="font-medium text-gray-800">Aston Tropicana / De Java Hotel</p>
+                <span class="inline-block bg-purple-100 text-purple-700 text-xs px-2 py-0.5 rounded-full mt-1">4★ Deluxe</span>
+              </td>
+              <td class="px-3 py-4 text-center"><span class="font-bold text-orange-600 text-base">$760</span></td>
+              <td class="px-3 py-4 text-center font-medium text-gray-700">$660</td>
+              <td class="px-3 py-4 text-center font-medium text-gray-700">$620</td>
+              <td class="px-3 py-4 text-center font-medium text-gray-700">$590</td>
+              <td class="px-3 py-4 text-center font-medium text-gray-500">+$180</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="px-5 py-3 bg-orange-50 border-t border-orange-100">
+        <p class="text-orange-700 text-xs font-medium">📌 Your group of 3 falls under the <strong>2–3 pax</strong> column. Total package cost = price/person × 3 (excl. flights).</p>
+      </div>
+    </div>
+
+    <!-- Total Cost Calculator -->
+    <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl p-6 mb-8 border border-orange-200">
+      <h3 class="font-bold text-gray-800 text-lg mb-4">💰 Total Package Cost for 3 Pax</h3>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-4 text-center border border-gray-200">
+          <p class="text-xs text-gray-500 mb-1">3★ Standard</p>
+          <p class="text-3xl font-bold text-gray-700">$2,070</p>
+          <p class="text-xs text-gray-400 mt-1">$690 × 3 persons</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center border-2 border-orange-400 shadow-md">
+          <p class="text-xs text-orange-600 font-semibold mb-1">4★ Superior</p>
+          <p class="text-3xl font-bold text-orange-600">$2,190</p>
+          <p class="text-xs text-gray-400 mt-1">$730 × 3 persons</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center border border-gray-200">
+          <p class="text-xs text-gray-500 mb-1">4★ Deluxe</p>
+          <p class="text-3xl font-bold text-gray-700">$2,280</p>
+          <p class="text-xs text-gray-400 mt-1">$760 × 3 persons</p>
+        </div>
+      </div>
+      <p class="text-gray-500 text-xs mt-4">* Package cost only. Add return flights SIN–JKT (~$150–280/pax) and personal expenses.</p>
+    </div>
+
+    <!-- Includes / Excludes -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-2xl p-6 shadow-sm">
+        <h3 class="font-bold text-gray-800 text-lg mb-4 flex items-center gap-2"><span class="text-green-500 text-xl">✅</span> Package Includes</h3>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">✓</span> 4 nights accommodation with daily breakfast</li>
+          <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">✓</span> Return Whoosh high-speed train tickets (Jakarta ↔ Bandung)</li>
+          <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">✓</span> All meals as indicated (Lunch &amp; Dinner Day 1; Breakfast, Lunch &amp; Dinner Days 2–4; Breakfast Day 5)</li>
+          <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">✓</span> Air-conditioned private transportation throughout</li>
+          <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">✓</span> All entrance fees as per itinerary</li>
+          <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">✓</span> Parking fees and toll charges</li>
+          <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">✓</span> <strong>Malay-speaking driver cum tour guide</strong></li>
+          <li class="flex gap-2"><span class="text-green-500 flex-shrink-0">✓</span> Guide/driver tip ($3/person/day)</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm">
+        <h3 class="font-bold text-gray-800 text-lg mb-4 flex items-center gap-2"><span class="text-red-400 text-xl">❌</span> Package Excludes</h3>
+        <ul class="space-y-3 text-sm text-gray-600">
+          <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">✗</span> Return flight ticket (Singapore ↔ Jakarta)</li>
+          <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">✗</span> Additional meals not listed in itinerary</li>
+          <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">✗</span> Additional optional tours</li>
+          <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">✗</span> Personal expenses and shopping</li>
+          <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">✗</span> Travel insurance (strongly recommended)</li>
+          <li class="flex gap-2"><span class="text-red-400 flex-shrink-0">✗</span> Peak season surcharge if applicable</li>
+        </ul>
+        <div class="mt-5 bg-blue-50 rounded-xl p-4">
+          <p class="text-blue-700 text-xs font-medium">📌 Tour Policy: Guide tip included. No hidden charges beyond the above exclusions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end content-package -->
+
+
+<!-- ═══════════════════════════════════════════════
+     TAB 3 — HOTELS
+═══════════════════════════════════════════════ -->
+<div id="content-hotels" class="hidden fade-in">
+
+  <div class="bg-gradient-to-br from-amber-700 to-orange-600 text-white py-14 px-4 text-center">
+    <span class="text-orange-200 text-xs uppercase tracking-widest font-semibold">Choose Your Comfort</span>
+    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-3" style="font-family:Georgia,serif">Pick Your Hotel Tier</h2>
+    <p class="text-orange-200 text-sm">All options include breakfast, same itinerary, same guide. It's just about comfort level and budget.</p>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-12">
+
+    <!-- 3 Hotel Tier Cards -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+
+      <!-- 3 Star -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden card-hover flex flex-col">
+        <div class="bg-gray-600 text-white px-5 py-4 text-center">
+          <p class="text-gray-300 text-xs uppercase tracking-wider mb-1">Option 1</p>
+          <h3 class="text-xl font-bold">3★ Standard</h3>
+          <p class="text-3xl font-bold text-white mt-2">$690 <span class="text-lg font-normal text-gray-300">/ pax</span></p>
+          <p class="text-gray-300 text-xs mt-1">$2,070 total for 3 persons</p>
+        </div>
+        <div class="p-5 flex-1">
+          <div class="mb-5">
+            <p class="text-xs text-gray-500 uppercase font-semibold tracking-wider mb-3">Jakarta (1 night)</p>
+            <div class="bg-gray-50 rounded-xl p-4">
+              <p class="font-semibold text-gray-800">Grand G7 Jakarta</p>
+              <p class="text-gray-500 text-xs">or Ibis Mangga Dua</p>
+              <p class="text-gray-500 text-sm mt-2">Clean, functional rooms in central Jakarta. Close to shopping and dining. Good value for a 1-night stopover.</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 uppercase font-semibold tracking-wider mb-3">Bandung (3 nights)</p>
+            <div class="bg-gray-50 rounded-xl p-4">
+              <p class="font-semibold text-gray-800">Pasar Baru Square Hotel</p>
+              <p class="text-gray-500 text-xs">or Panen Hotel</p>
+              <p class="text-gray-500 text-sm mt-2">Central Bandung location, easy access to Pasar Baru shopping area. Comfortable standard rooms with breakfast.</p>
+            </div>
+          </div>
+        </div>
+        <div class="px-5 pb-5">
+          <div class="bg-gray-100 rounded-xl p-3 text-center">
+            <p class="text-gray-600 text-sm font-medium">Single supplement: +$100/room</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Star Superior -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover flex flex-col hotel-recommended">
+        <div class="bg-orange-500 text-white px-5 py-4 text-center relative">
+          <div class="absolute top-3 right-3 bg-white text-orange-600 text-xs px-2 py-0.5 rounded-full font-bold">Popular Choice</div>
+          <p class="text-orange-200 text-xs uppercase tracking-wider mb-1">Option 2</p>
+          <h3 class="text-xl font-bold">4★ Superior</h3>
+          <p class="text-3xl font-bold text-white mt-2">$730 <span class="text-lg font-normal text-orange-200">/ pax</span></p>
+          <p class="text-orange-200 text-xs mt-1">$2,190 total for 3 persons</p>
+        </div>
+        <div class="p-5 flex-1">
+          <div class="mb-5">
+            <p class="text-xs text-gray-500 uppercase font-semibold tracking-wider mb-3">Jakarta (1 night)</p>
+            <div class="bg-orange-50 rounded-xl p-4">
+              <p class="font-semibold text-gray-800">Novotel Gaja Mada</p>
+              <p class="text-gray-500 text-xs">or El Royale Hotel</p>
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=500&q=75" alt="Hotel Jakarta" class="w-full h-28 object-cover rounded-lg mt-2" onerror="this.style.display='none'">
+              <p class="text-gray-500 text-sm mt-2">Well-known international brands in central Jakarta. Superior rooms with better amenities, comfortable beds, quality breakfast.</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 uppercase font-semibold tracking-wider mb-3">Bandung (3 nights)</p>
+            <div class="bg-orange-50 rounded-xl p-4">
+              <p class="font-semibold text-gray-800">Grand Tebu Hotel</p>
+              <p class="text-gray-500 text-xs">or De Braga Hotel</p>
+              <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=500&q=75" alt="Hotel Bandung" class="w-full h-28 object-cover rounded-lg mt-2" onerror="this.style.display='none'">
+              <p class="text-gray-500 text-sm mt-2">4-star comfort in central Bandung. De Braga Hotel is on the charming Braga heritage street. Great rooms, lovely breakfast, convenient location.</p>
+            </div>
+          </div>
+        </div>
+        <div class="px-5 pb-5">
+          <div class="bg-orange-100 rounded-xl p-3 text-center">
+            <p class="text-orange-700 text-sm font-medium">Single supplement: +$150/room</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Star Deluxe -->
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden card-hover flex flex-col">
+        <div class="bg-purple-600 text-white px-5 py-4 text-center">
+          <p class="text-purple-300 text-xs uppercase tracking-wider mb-1">Option 3</p>
+          <h3 class="text-xl font-bold">4★ Deluxe</h3>
+          <p class="text-3xl font-bold text-white mt-2">$760 <span class="text-lg font-normal text-purple-200">/ pax</span></p>
+          <p class="text-purple-200 text-xs mt-1">$2,280 total for 3 persons</p>
+        </div>
+        <div class="p-5 flex-1">
+          <div class="mb-5">
+            <p class="text-xs text-gray-500 uppercase font-semibold tracking-wider mb-3">Jakarta (1 night)</p>
+            <div class="bg-purple-50 rounded-xl p-4">
+              <p class="font-semibold text-gray-800">Mercure Batavia</p>
+              <p class="text-gray-500 text-xs">or Novotel Mangga Dua</p>
+              <p class="text-gray-500 text-sm mt-2">Premium Accor properties near Kota Tua. Spacious deluxe rooms, excellent facilities, prime location for Day 4 sightseeing.</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs text-gray-500 uppercase font-semibold tracking-wider mb-3">Bandung (3 nights)</p>
+            <div class="bg-purple-50 rounded-xl p-4">
+              <p class="font-semibold text-gray-800">Aston Tropicana</p>
+              <p class="text-gray-500 text-xs">or De Java Hotel</p>
+              <p class="text-gray-500 text-sm mt-2">Aston Tropicana is a popular landmark hotel in Bandung with a pool and great facilities. Ideal for a comfortable, pampered stay.</p>
+            </div>
+          </div>
+        </div>
+        <div class="px-5 pb-5">
+          <div class="bg-purple-100 rounded-xl p-3 text-center">
+            <p class="text-purple-700 text-sm font-medium">Single supplement: +$180/room</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end 3 cards -->
+
+    <!-- Comparison Table -->
+    <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+      <div class="bg-gray-800 text-white px-6 py-4">
+        <h3 class="font-bold text-lg">Quick Comparison</h3>
+        <p class="text-gray-400 text-sm mt-1">All tiers share the same itinerary, guide, meals, and transport — only the hotel changes.</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-50 border-b border-gray-200">
+            <tr>
+              <th class="text-left px-5 py-3 font-semibold text-gray-700">Feature</th>
+              <th class="text-center px-4 py-3 font-semibold text-gray-600">3★ Standard</th>
+              <th class="text-center px-4 py-3 font-semibold text-orange-600">4★ Superior</th>
+              <th class="text-center px-4 py-3 font-semibold text-purple-600">4★ Deluxe</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr><td class="px-5 py-3 text-gray-600">Price per person (3 pax)</td><td class="text-center px-4 py-3 font-medium">$690</td><td class="text-center px-4 py-3 font-bold text-orange-600">$730</td><td class="text-center px-4 py-3 font-medium text-purple-600">$760</td></tr>
+            <tr class="bg-gray-50"><td class="px-5 py-3 text-gray-600">Total for group of 3</td><td class="text-center px-4 py-3 font-medium">$2,070</td><td class="text-center px-4 py-3 font-bold text-orange-600">$2,190</td><td class="text-center px-4 py-3 font-medium text-purple-600">$2,280</td></tr>
+            <tr><td class="px-5 py-3 text-gray-600">Room quality</td><td class="text-center px-4 py-3">Standard</td><td class="text-center px-4 py-3 text-orange-600">Superior</td><td class="text-center px-4 py-3 text-purple-600">Deluxe</td></tr>
+            <tr class="bg-gray-50"><td class="px-5 py-3 text-gray-600">Daily breakfast</td><td class="text-center px-4 py-3">✅</td><td class="text-center px-4 py-3">✅</td><td class="text-center px-4 py-3">✅</td></tr>
+            <tr><td class="px-5 py-3 text-gray-600">Same guide &amp; transport</td><td class="text-center px-4 py-3">✅</td><td class="text-center px-4 py-3">✅</td><td class="text-center px-4 py-3">✅</td></tr>
+            <tr class="bg-gray-50"><td class="px-5 py-3 text-gray-600">Same itinerary &amp; meals</td><td class="text-center px-4 py-3">✅</td><td class="text-center px-4 py-3">✅</td><td class="text-center px-4 py-3">✅</td></tr>
+            <tr><td class="px-5 py-3 text-gray-600">Diff. vs 3★ (per person)</td><td class="text-center px-4 py-3 text-gray-400">–</td><td class="text-center px-4 py-3 text-orange-600">+$40</td><td class="text-center px-4 py-3 text-purple-600">+$70</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="px-5 py-4 bg-amber-50 border-t border-amber-100">
+        <p class="text-amber-700 text-xs">💡 <strong>Tip:</strong> For 3 seniors, we'd suggest at minimum the 4★ Superior tier for the extra comfort — the price difference is only $40/person more than 3★.</p>
+      </div>
+    </div>
+
+  </div>
+</div><!-- end content-hotels -->
+
+
+<!-- ═══════════════════════════════════════════════
+     TAB 4 — PAPA'S VERDICT
+═══════════════════════════════════════════════ -->
+<div id="content-papa" class="hidden fade-in">
+
+  <!-- Header -->
+  <div class="bg-gradient-to-br from-rose-600 via-pink-500 to-orange-400 text-white py-16 px-4 text-center">
+    <div class="text-6xl mb-4">❤️</div>
+    <h2 class="text-3xl md:text-5xl font-bold mb-3" style="font-family:Georgia,serif">Dear Papa</h2>
+    <p class="text-pink-100 text-base md:text-lg max-w-xl mx-auto leading-relaxed">She's been looking at this trip for a while. Before you decide, here's everything you'd want to know — answered honestly.</p>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+
+    <!-- Concern cards -->
+    <h3 class="text-center text-xl font-bold text-gray-700 mb-8" style="font-family:Georgia,serif">Papa's Questions, Answered</h3>
+
+    <div class="space-y-5 mb-12">
+
+      <!-- Safety -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border-l-4 border-green-500 card-hover">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-2xl">🛡️</div>
+          <div>
+            <p class="font-bold text-gray-800 text-lg mb-2">"Is it safe for them?"</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Yes — this is a <strong>fully organised guided tour</strong>, not independent travel. A professional <strong>Malay-speaking driver cum guide</strong> will be with them <em>every single day</em>, from airport pickup to drop-off. They are never left to navigate alone. Air-conditioned transport door-to-door. All activities are senior-appropriate with paved paths and seating.</p>
+            <span class="inline-block mt-3 bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">✓ Guided at all times</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Credibility -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border-l-4 border-blue-500 card-hover">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 text-2xl">🏢</div>
+          <div>
+            <p class="font-bold text-gray-800 text-lg mb-2">"Can I trust the travel agency?"</p>
+            <p class="text-gray-600 text-sm leading-relaxed"><strong>Halijah Travel Pte Ltd</strong> is a long-established Singapore-based travel agency at 22 Kandahar Street. They are <strong>IATA accredited</strong>, <strong>STB licensed (TA 740)</strong>, SME 500 listed, and a founding member of the Kg Gelam Business Association. They specialise in Muslim-friendly, Malay-speaking group tours to Indonesia. You can call them directly: <strong>(65) 6294 9676</strong>.</p>
+            <span class="inline-block mt-3 bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">✓ IATA · STB · SME500 — fully accredited</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Value -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border-l-4 border-amber-500 card-hover">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0 text-2xl">💰</div>
+          <div>
+            <p class="font-bold text-gray-800 text-lg mb-2">"Is it good value?"</p>
+            <p class="text-gray-600 text-sm leading-relaxed">The package covers <strong>4 nights hotel, all daily meals, AC transport, Whoosh train both ways, entrance fees, guide, and tips</strong> — all in one price. For SGD 690–760 per person, that is genuinely excellent value for a fully-escorted 5-day overseas trip. Compare: a 4-star Singapore staycation for 2 nights costs more than this entire 5-day tour.</p>
+            <span class="inline-block mt-3 bg-amber-100 text-amber-700 text-xs px-3 py-1 rounded-full font-medium">✓ Everything included — no hidden costs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Without family -->
+      <div class="bg-white rounded-2xl p-6 shadow-sm border-l-4 border-teal-500 card-hover">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0 text-2xl">👩‍👩‍👧</div>
+          <div>
+            <p class="font-bold text-gray-800 text-lg mb-2">"She'll be travelling without family..."</p>
+            <p class="text-gray-600 text-sm leading-relaxed">She won't be alone — she'll have her <strong>2 trusted friends</strong> with her the whole time, and a <strong>professional Malay-speaking guide</strong> who handles everything. They'll be staying in proper hotels, eating at proper restaurants, and following a structured daily plan. She'll be in good hands, surrounded by people she trusts.</p>
+            <span class="inline-block mt-3 bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-medium">✓ 2 friends + professional guide at all times</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Miss her -->
+      <div class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-6 shadow-sm border-l-4 border-rose-400 card-hover">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center flex-shrink-0 text-2xl">💕</div>
+          <div>
+            <p class="font-bold text-gray-800 text-lg mb-2">"But I'll miss her..."</p>
+            <p class="text-gray-600 text-sm leading-relaxed">That's the sweetest concern of all, Papa. She'll miss you too — and she'll be WhatsApp-ing you photos of volcanoes and satay the whole time. It's only <strong>5 days</strong>. And when she comes back, she'll have so many stories, gifts, and happy memories to share with you. A happy wife is the best souvenir. 💕</p>
+            <span class="inline-block mt-3 bg-rose-100 text-rose-700 text-xs px-3 py-1 rounded-full font-medium">She'll be back in 5 days — with love &amp; stories 🥰</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1-Day Extension Request -->
+      <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl p-6 shadow-sm border-l-4 border-indigo-400 card-hover">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 text-2xl">🏙️</div>
+          <div class="flex-1">
+            <p class="font-bold text-gray-800 text-lg mb-1">"One more day in Jakarta?"</p>
+            <span class="inline-block bg-indigo-100 text-indigo-600 text-xs px-2 py-0.5 rounded-full font-semibold mb-3">Special Request</span>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">The package has just 1 afternoon in Jakarta before flying home. We'd love to extend by <strong>one extra day</strong> so we can truly experience the capital. With a 6-day trip, we could visit the <strong>National Museum</strong>, stroll beautiful <strong>Menteng</strong> neighbourhood, and shop at <strong>Grand Indonesia Mall</strong> — Jakarta's finest — without the rush. Jakarta deserves more than an afternoon!</p>
+            <div class="bg-white rounded-xl p-4 border border-indigo-100">
+              <p class="text-indigo-700 text-xs font-semibold mb-2">What the extra day adds:</p>
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="bg-indigo-50 text-indigo-600 text-xs px-3 py-1 rounded-full border border-indigo-200">🏛️ National Museum</span>
+                <span class="bg-indigo-50 text-indigo-600 text-xs px-3 py-1 rounded-full border border-indigo-200">🌳 Menteng stroll</span>
+                <span class="bg-indigo-50 text-indigo-600 text-xs px-3 py-1 rounded-full border border-indigo-200">🛍️ Grand Indonesia</span>
+                <span class="bg-indigo-50 text-indigo-600 text-xs px-3 py-1 rounded-full border border-indigo-200">😌 Relaxed departure</span>
+              </div>
+              <p class="text-gray-400 text-xs">Estimated extra cost: ~SGD 100–160 per person for 1 extra hotel night + any flight date change fee.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end concern cards -->
+
+    <!-- Halal assurance -->
+    <div class="bg-green-50 border border-green-200 rounded-2xl p-6 mb-10 text-center">
+      <div class="text-4xl mb-3">🕌</div>
+      <h3 class="font-bold text-gray-800 text-lg mb-2">Halal Throughout</h3>
+      <p class="text-gray-600 text-sm leading-relaxed max-w-xl mx-auto">Halijah Travel specialises in Muslim-friendly tours. All meals included in the package are halal. No worries there.</p>
+    </div>
+
+    <!-- The Verdict section -->
+    <div class="text-center">
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2" style="font-family:Georgia,serif">So, Papa... what do you say?</h3>
+      <p class="text-gray-500 text-sm mb-8">And — may we have one extra day in Jakarta? 🌺</p>
+
+      <!-- Buttons (shown by default) -->
+      <div id="verdict-buttons" class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="handleYes()"
+          class="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold text-xl px-12 py-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-green-300">
+          ✅ Yes, go ahead!
+        </button>
+        <button onclick="handleNotYet()"
+          class="bg-white border-2 border-gray-300 hover:border-gray-400 text-gray-600 hover:text-gray-800 font-bold text-xl px-12 py-5 rounded-2xl shadow transition-all hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-gray-200">
+          🤔 Not yet...
+        </button>
+      </div>
+
+      <!-- YES response -->
+      <div id="verdict-yes" class="hidden">
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-2xl p-10">
+          <div class="text-6xl mb-4">🎉</div>
+          <h3 class="text-3xl font-bold text-green-700 mb-3" style="font-family:Georgia,serif">Thank you, Papa!</h3>
+          <p class="text-gray-600 text-base mb-2">You are the best husband in the world. 💚</p>
+          <p class="text-gray-500 text-sm">She will come home happy, rested, and full of love. Now let's book those flights!</p>
+          <div class="mt-6 flex flex-wrap gap-3 justify-center">
+            <button onclick="switchTab('package')" class="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-colors">📋 View Package Details</button>
+            <button onclick="switchTab('hotels')" class="bg-teal-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-teal-600 transition-colors">🏨 Choose Hotel Tier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOT YET response -->
+      <div id="verdict-notyet" class="hidden">
+        <div class="bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-200 rounded-2xl p-10">
+          <div class="text-6xl mb-4">🥺</div>
+          <h3 class="text-2xl font-bold text-orange-700 mb-3" style="font-family:Georgia,serif">Are you sure, Papa?</h3>
+          <p class="text-gray-600 text-sm mb-2">She's been looking forward to this for so long...</p>
+          <p class="text-gray-500 text-sm mb-6">Maybe take another look at the trip? The volcanoes, the hot springs, the white crater — she'd love every moment of it.</p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <button onclick="lookAgain()"
+              class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-full transition-colors shadow-md">
+              🔍 Take another look
+            </button>
+            <button onclick="handleYes()"
+              class="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-full transition-colors shadow-md">
+              💚 Actually... Yes!
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div><!-- end content-papa -->
+
+
+<!-- ═══════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script>
+  function switchTab(name) {
+    var tabs = ['trip', 'package', 'hotels', 'papa'];
+    tabs.forEach(function(t) {
+      var content = document.getElementById('content-' + t);
+      var btn     = document.getElementById('tab-' + t);
+      if (t === name) {
+        content.classList.remove('hidden');
+        content.classList.add('fade-in');
+        btn.classList.remove('tab-inactive');
+        btn.classList.add('tab-active');
+      } else {
+        content.classList.add('hidden');
+        content.classList.remove('fade-in');
+        btn.classList.remove('tab-active');
+        btn.classList.add('tab-inactive');
+      }
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function handleYes() {
+    document.getElementById('verdict-buttons').classList.add('hidden');
+    document.getElementById('verdict-notyet').classList.add('hidden');
+    document.getElementById('verdict-yes').classList.remove('hidden');
+    if (typeof confetti === 'undefined') return;
+    // Confetti burst
+    var count = 200;
+    var defaults = { origin: { y: 0.6 }, zIndex: 9999 };
+    function fire(particleRatio, opts) {
+      confetti(Object.assign({}, defaults, opts, { particleCount: Math.floor(count * particleRatio) }));
+    }
+    fire(0.25, { spread: 26, startVelocity: 55 });
+    fire(0.2,  { spread: 60 });
+    fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+    fire(0.1,  { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+    fire(0.1,  { spread: 120, startVelocity: 45 });
+    setTimeout(function() {
+      confetti({ particleCount: 80, spread: 100, origin: { x: 0.2, y: 0.5 }, zIndex: 9999 });
+    }, 400);
+    setTimeout(function() {
+      confetti({ particleCount: 80, spread: 100, origin: { x: 0.8, y: 0.5 }, zIndex: 9999 });
+    }, 700);
+  }
+
+  function handleNotYet() {
+    document.getElementById('verdict-buttons').classList.add('hidden');
+    document.getElementById('verdict-yes').classList.add('hidden');
+    document.getElementById('verdict-notyet').classList.remove('hidden');
+  }
+
+  function lookAgain() {
+    document.getElementById('verdict-notyet').classList.add('hidden');
+    document.getElementById('verdict-yes').classList.add('hidden');
+    document.getElementById('verdict-buttons').classList.remove('hidden');
+    switchTab('trip');
+  }
+</script>
+
+</body>
+</html>
