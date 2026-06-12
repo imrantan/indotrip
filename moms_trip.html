@@ -322,7 +322,7 @@
       <div class="bg-white rounded-2xl shadow-sm overflow-hidden mb-6 card-hover">
         <div class="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-6 py-5 flex items-center justify-between">
           <div>
-            <p class="text-purple-200 text-xs font-semibold uppercase tracking-wider mb-1">Day 5 · Jakarta → Singapore</p>
+            <p class="text-purple-200 text-xs font-semibold uppercase tracking-wider mb-1">Day 5 · Jakarta → Singapore <span class="opacity-60">(if no extension)</span></p>
             <h3 class="text-2xl font-bold">Homeward Bound</h3>
             <div class="flex gap-2 mt-2">
               <span class="meal-pill bg-blue-300 text-blue-900">🌄 Breakfast</span>
@@ -352,6 +352,49 @@
               <p class="text-gray-500 text-sm leading-relaxed">Guide transfers group to Soekarno-Hatta Airport. Board flight back to Changi — arriving home well-rested, happy, and full of stories. 🥰</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Day 6 - Optional Extension -->
+      <div class="rounded-2xl overflow-hidden mb-6 card-hover" style="border: 2px dashed #a78bfa;">
+        <div class="bg-gradient-to-r from-violet-500 to-purple-400 text-white px-6 py-5 flex items-center justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <p class="text-violet-200 text-xs font-semibold uppercase tracking-wider">Day 6 · Jakarta</p>
+              <span class="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-semibold">Optional Extension</span>
+            </div>
+            <h3 class="text-2xl font-bold">One More Day</h3>
+            <div class="flex gap-2 mt-2">
+              <span class="meal-pill bg-violet-300 text-violet-900">🌄 Breakfast</span>
+            </div>
+          </div>
+          <span class="text-5xl opacity-90">🌸</span>
+        </div>
+        <div class="bg-white grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-violet-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">😴</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Morning — Rest & Recharge</p>
+              <p class="text-gray-500 text-sm leading-relaxed">A slow, easy morning with no schedule and no rush — just rest, breakfast, and a little more Jakarta time.</p>
+            </div>
+          </div>
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-violet-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">🛍️</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Afternoon — Free & Easy</p>
+              <p class="text-gray-500 text-sm leading-relaxed">At own leisure. A quiet café, last-minute shopping, or simply soaking in the city at her own pace before heading home.</p>
+            </div>
+          </div>
+          <div class="p-5 flex gap-3">
+            <div class="w-9 h-9 bg-violet-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 text-base">✈️</div>
+            <div>
+              <p class="font-semibold text-gray-700 text-sm mb-1">Flight Home — Timings TBC</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Transfer to Soekarno-Hatta Airport and fly back to Changi. Exact departure subject to flight availability.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-violet-50 px-6 py-3 text-center">
+          <p class="text-violet-400 text-xs">✨ Subject to Papa's approval — see the Papa's Verdict tab</p>
         </div>
       </div>
     </div>
@@ -931,7 +974,7 @@
       </div>
 
       <!-- YES response -->
-      <div id="verdict-yes" class="hidden">
+      <div id="verdict-yes" class="hidden space-y-4">
         <div class="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-2xl p-6 md:p-10">
           <div class="text-6xl mb-4">🎉</div>
           <h3 class="text-3xl font-bold text-green-700 mb-3" style="font-family:Georgia,serif">Thank you, Papa!</h3>
@@ -942,7 +985,8 @@
             <button onclick="switchTab('hotels')" class="bg-teal-500 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-teal-600 transition-colors">🏨 Choose Hotel Tier</button>
           </div>
           <div class="mt-6 border-t border-green-200 pt-6">
-            <p class="text-gray-400 text-xs uppercase tracking-wider font-semibold mb-3">Share your answer with Mama</p>
+            <p class="text-gray-400 text-xs uppercase tracking-wider font-semibold mb-1">Share your answer with Mama</p>
+            <p class="text-gray-400 text-xs mb-3">Tap WhatsApp or Telegram below to let Mama know!</p>
             <div class="flex flex-wrap gap-3 justify-center">
               <button onclick="shareWhatsApp()"
                 class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors shadow-sm">
@@ -956,6 +1000,47 @@
               </button>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Extension Day Proposal -->
+      <div class="bg-gradient-to-br from-indigo-50 to-violet-50 border-2 border-indigo-200 rounded-2xl p-6 md:p-8 text-center">
+        <p class="text-indigo-400 text-xs uppercase tracking-wider font-semibold mb-4">One more thing, Papa…</p>
+        <div class="text-5xl mb-4">🌸</div>
+        <p class="text-gray-700 text-base font-medium mb-2">Could she have one extra day in Jakarta?</p>
+        <p class="text-gray-500 text-sm mb-6 max-w-sm mx-auto">Mama would love a little more time to rest and recharge before the long journey home — no agenda, just a slow and easy day before flying back.</p>
+
+        <div id="extension-buttons" class="flex flex-wrap gap-3 justify-center">
+          <button onclick="approveExtension()" class="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">Yes, one more day! 💛</button>
+          <button onclick="declineExtension()" class="bg-gray-100 hover:bg-gray-200 text-gray-600 px-6 py-2.5 rounded-full text-sm font-semibold transition-colors">Let's keep it 5 days</button>
+        </div>
+
+        <div id="extension-yes" class="hidden">
+          <div class="text-5xl mb-3">🌟</div>
+          <p class="text-xl font-bold text-indigo-700 mb-2" style="font-family:Georgia,serif">You're the best, Papa!</p>
+          <p class="text-gray-500 text-sm mb-5">Day 6 is all hers. She'll come home rested and full of love.</p>
+          <div class="border-t border-indigo-100 pt-5">
+            <p class="text-gray-400 text-xs uppercase tracking-wider font-semibold mb-1">Share the good news</p>
+            <p class="text-gray-400 text-xs mb-3">Tap WhatsApp or Telegram below to send Mama the update!</p>
+            <div class="flex flex-wrap gap-3 justify-center">
+              <button onclick="shareExtensionWhatsApp()"
+                class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors shadow-sm">
+                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.38 1.26 4.8L2.05 22l5.44-1.43c1.36.74 2.9 1.16 4.54 1.16 5.46 0 9.91-4.45 9.91-9.91C21.94 6.37 17.5 2 12.04 2zm5.52 14.1c-.23.63-1.34 1.21-1.85 1.27-.5.07-1.16.1-1.87-.12-.43-.13-.98-.31-1.68-.61-2.96-1.28-4.9-4.26-5.05-4.46-.15-.2-1.22-1.63-1.22-3.1 0-1.48.77-2.2 1.04-2.51.27-.3.59-.38.79-.38l.57.01c.18 0 .43-.07.67.51l.86 2.08c.09.2.04.44-.09.62l-.34.44c-.15.17-.31.36-.13.7.18.34.79 1.3 1.7 2.11.86.75 1.65 1.04 2.04 1.16.34.1.57.07.79-.1l.59-.67c.19-.23.37-.15.62-.09l2.06.97c.3.13.49.2.55.31.07.11.07.65-.16 1.28z"/></svg>
+                WhatsApp
+              </button>
+              <button onclick="shareExtensionTelegram()"
+                class="flex items-center gap-2 bg-sky-500 hover:bg-sky-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors shadow-sm">
+                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.4l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.159z"/></svg>
+                Telegram
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="extension-no" class="hidden">
+          <div class="text-5xl mb-3">🤍</div>
+          <p class="text-lg font-semibold text-gray-600 mb-2">No worries — 5 days it is.</p>
+          <p class="text-gray-400 text-sm">She'll come home happy either way. Thank you for considering it, Papa.</p>
         </div>
       </div>
 
@@ -1042,7 +1127,30 @@
     document.getElementById('verdict-notyet').classList.add('hidden');
     document.getElementById('verdict-yes').classList.add('hidden');
     document.getElementById('verdict-buttons').classList.remove('hidden');
+    document.getElementById('extension-buttons').classList.remove('hidden');
+    document.getElementById('extension-yes').classList.add('hidden');
+    document.getElementById('extension-no').classList.add('hidden');
     switchTab('trip');
+  }
+
+  function approveExtension() {
+    document.getElementById('extension-buttons').classList.add('hidden');
+    document.getElementById('extension-yes').classList.remove('hidden');
+  }
+
+  function declineExtension() {
+    document.getElementById('extension-buttons').classList.add('hidden');
+    document.getElementById('extension-no').classList.remove('hidden');
+  }
+
+  function shareExtensionWhatsApp() {
+    var msg = "💛 Day 6 approved! Mama, you get one extra day in Jakarta to rest before flying home. Take all the time you need! Love you ❤️";
+    window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+  }
+
+  function shareExtensionTelegram() {
+    var msg = "💛 Day 6 approved! Mama, you get one extra day in Jakarta to rest before flying home. Take all the time you need! Love you ❤️";
+    window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(msg), '_blank');
   }
 
   function shareWhatsApp() {
